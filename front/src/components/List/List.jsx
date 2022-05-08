@@ -51,9 +51,9 @@ const List = () => {
   const decorationDone = {
     textDecoration: 'line-through'
   };
-  return <div>
-    <table >
-      <thead>
+  return  <div className='form-group mx-sm-5'>
+  <table className='table table-striped' >
+    <thead className='thead-dark'>
         <tr>
           <td>ID</td>
           <td>Tarea</td>
@@ -65,10 +65,9 @@ const List = () => {
           return <tr key={todo.id} style={todo.completed ? decorationDone : {}}>
             <td>{todo.id}</td>
             <td>{todo.name}</td>
-            <td><input type="checkbox" defaultChecked={todo.completed} onChange={(event) => onChange(event, todo)}></input></td>
-            <td><button onClick={() => onDelete(todo.id)}>Eliminar</button></td>
-            <td><button onClick={() => onEdit(todo)}>Editar</button></td>
-          </tr>
+            <td><input type="radio" defaultChecked={todo.completed} onChange={(event) => onChange(event, todo)}></input></td>
+              <td><button className="btn btn-info" onClick={() => onDelete(todo.id)}>Eliminar</button></td>
+              <td><button className="btn btn-info" onClick={() => onEdit(todo)}>Editar</button></td>     </tr>
         })}
       </tbody>
     </table>

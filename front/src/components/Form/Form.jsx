@@ -62,18 +62,23 @@ const Form = () => {
         });
     }
   
-    return <form ref={formRef}>
-      <input
-        type="text"
-        name="name"
-        placeholder="¿Qué piensas hacer hoy?"
-        defaultValue={item.name}
-        onChange={(event) => {
-          setState({ ...state, name: event.target.value })
-        }}  ></input>
-      {item.id && <button onClick={onEdit}>Actualizar</button>}
-      {!item.id && <button onClick={onAdd}>Crear</button>}
-    </form>
+    return<form ref={formRef}>
+    <br/>
+    <div className='form-group mx-sm-5'>
+    <input
+      className='form-control'
+      type="text"
+      name="name"
+      placeholder="¿Qué piensas hacer hoy?"
+      defaultValue={item.name}
+      onChange={(event) => {
+        setState({ ...state, name: event.target.value })
+      }}  ></input>
+    {item.id && <button className="btn btn-success" onClick={onEdit}>Actualizar</button>}
+    {!item.id && <button className="btn btn-success" onClick={onAdd}>Crear</button>}
+ 
+    </div>
+     </form>
   }
   
   export default Form;
