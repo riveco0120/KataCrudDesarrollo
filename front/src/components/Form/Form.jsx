@@ -10,9 +10,14 @@ const Form = () => {
     const { dispatch, state: { todo } } = useContext(Store);
     const item = todo.item;
     const [state, setState] = useState(item);
-  
+
+    const [numero,setNumero] = useState(0);
+    
+
     //Metodo para agregar lista
     const onAdd = (event) => {
+      setNumero(numero+1);
+
       event.preventDefault();
   
       const request = {
@@ -65,6 +70,7 @@ const Form = () => {
     return<form ref={formRef}>
     <br/>
     <div className='form-group mx-sm-5'>
+      <h1 className="display-6">Tareas totales: {numero}</h1>
     <input
       className='form-control'
       type="text"
@@ -74,6 +80,7 @@ const Form = () => {
       onChange={(event) => {
         setState({ ...state, name: event.target.value })
       }}  ></input>
+
     {item.id && <button className="btn btn-success" onClick={onEdit}>Actualizar</button>}
     {!item.id && <button className="btn btn-success" onClick={onAdd}>Crear</button>}
  
