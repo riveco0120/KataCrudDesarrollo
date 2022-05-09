@@ -1,3 +1,3 @@
 
 Vide de la solucion
-https://studio.youtube.com/video/yNMC4Lwn7sw/edit
+https://www.youtube.com/watch?v=yNMC4Lwn7sw
