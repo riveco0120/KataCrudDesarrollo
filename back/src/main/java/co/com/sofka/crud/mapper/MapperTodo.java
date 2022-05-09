@@ -7,12 +7,13 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
 @Mapper(componentModel = "spring")
-public class MapperTodo {
+public class MapperTodo implements IMapperTodo {
     //convertir de Tododto a todo
 
     @Autowired
     public ModelMapper modelMapper;
 
+    @Override
     public TodoDto entitymapperdto(Todo todo){
         TodoDto dto = new TodoDto();
         dto = modelMapper.map(todo, TodoDto.class);
@@ -20,6 +21,8 @@ public class MapperTodo {
     }
 
     //convertir de todo a tododto
+
+    @Override
     public Todo dtomapperentity(TodoDto dto){
         Todo todo = modelMapper.map(dto, Todo.class);
         return todo;
